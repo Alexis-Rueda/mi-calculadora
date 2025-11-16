@@ -150,7 +150,7 @@ body {
 }
 
 .span-row {
-    grid-row: span 2;
+    grid-row: span 3;
 }
 
 @media (max-width: 520px) {
