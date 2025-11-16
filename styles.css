@@ -1,0 +1,197 @@
+:root {
+    --bg: #dfdaf7;
+    --card-bg: #ffffff;
+    --accent: #9d1ed8;
+    --accent-strong: #6b27c4;
+    --muted: #191c1f;
+    --border: #fad7fb;
+    --error: #c34141;
+    --radius: 10px;
+    --font-heading: 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+    --display-bg: #f8f9fa;
+    --btn-bg: #ffffff;
+    --btn-shadow: rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: linear-gradient(180deg, var(--bg), #efeaff);
+    color: #0b1220;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    width: 100%;
+    max-width: 480px;
+}
+
+.calculator-container {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: 0 8px 24px var(--btn-shadow);
+    border: 1px solid rgba(20, 60, 110, 0.04);
+}
+
+#calculator-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--accent-strong);
+    margin: 0 0 1.2rem 0;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+.calculator {
+    width: 100%;
+}
+
+.display {
+    width: 100%;
+    background: var(--display-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1rem;
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--muted);
+    text-align: right;
+    margin-bottom: 1.2rem;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1.2rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--btn-bg);
+    color: var(--muted);
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease, border-color 150ms ease;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    min-height: 60px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    filter: brightness(0.98);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.1);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(157, 30, 216, 0.15);
+}
+
+.btn-number {
+    background: var(--btn-bg);
+    color: var(--muted);
+}
+
+.btn-operator {
+    background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+    color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+}
+
+.btn-operator:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 8px 20px rgba(157, 30, 216, 0.25);
+}
+
+.btn-clear {
+    background: linear-gradient(180deg, #ec19ff, #c600ff);
+    color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+}
+
+.btn-clear:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 20px rgba(195, 65, 65, 0.3);
+}
+
+.span-col {
+    grid-column: span 2;
+}
+
+.span-row {
+    grid-row: span 2;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 1rem;
+    }
+
+    .calculator-container {
+        padding: 1.2rem;
+    }
+
+    #calculator-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .display {
+        font-size: 1.6rem;
+        padding: 1rem 0.8rem;
+        min-height: 60px;
+    }
+
+    .buttons-grid {
+        gap: 0.6rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        padding: 1rem 0.6rem;
+        min-height: 52px;
+    }
+}
+
+@media (max-width: 380px) {
+    .display {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.9rem 0.5rem;
+        min-height: 48px;
+    }
+}
